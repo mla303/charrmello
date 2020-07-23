@@ -333,38 +333,59 @@ Widget _bottomSheet() {
                 ),
               ),
               SizedBox(height: 6.0),
+
+
               GridView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: SongsList.length,
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 3,
-
-                  mainAxisSpacing: 20.0,
+                  mainAxisSpacing: 0.0,
                 ),
                 itemBuilder: (BuildContext context, int index)
                 {
-                  return GestureDetector(
-                    onTap: (){
+                  return Card(
+                    color: Color(0xffED7457),
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(12),
+                                    topRight: Radius.circular(12),
+                                  ),
+                                ),
+                    child: GestureDetector(
+                      onTap: (){
 
-                    },
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset(SongsList[index].imgUrl,
-                            scale: 1.6),
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            height: MediaQuery.of(context).size.height * 0.13,
+                              width: MediaQuery.of(context).size.width * 0.28,
+                            decoration: BoxDecoration(
+                                color: Color(0xff000000),
+                                image: DecorationImage(
+                                    image: AssetImage(SongsList[index].imgUrl,),
+                                    fit: BoxFit.cover,
+                                    colorFilter: new ColorFilter.mode(
+                                        Colors.black.withOpacity(0.6), BlendMode.dstATop)
+                                ),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
+                            child: null,
+                          ),
+                           SizedBox(height: 1,),
+                           Text(SongsList[index].SongName,
+                            style:
 
-                        Text(SongsList[index].SongName,
-                          style:
-
-                          TextStyle(
-                              color: Colors.white,
-                              fontSize: MediaQuery.of(context).size.height/60,
-                              fontWeight: FontWeight.w400
-                          ),)
-
-
-
-                      ],
+                            TextStyle(
+                                color: Colors.white,
+                                fontSize: MediaQuery.of(context).size.height/60,
+                                fontWeight: FontWeight.w400
+                            ),),
+                        ],
+                      ),
                     ),
                   );
                 },
