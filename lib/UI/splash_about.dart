@@ -1,3 +1,4 @@
+import 'package:charrmello/UI/login.dart';
 import 'package:charrmello/UI/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,7 @@ class _splash_aboutState extends State<splash_about> {
                         Navigator.pushReplacement(
                             context,
                             new MaterialPageRoute(
-                                builder: (BuildContext context) => new signup()));
+                                builder: (BuildContext context) => new login()));
                       },
                       child: Text(
                         "Enter",

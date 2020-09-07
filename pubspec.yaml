@@ -26,6 +26,13 @@ dependencies:
   animated_splash:
   rounded_modal:
   carousel_slider:
+  flutter_facebook_login: ^3.0.0
+  http: ^0.12.2
+  firebase_auth: ^0.16.1
+  firebase_core: ^0.4.4
+  audioplayers: ^0.16.0
+  fluttertoast:
+  firebase_database:
 
 dev_dependencies:
   flutter_test:
